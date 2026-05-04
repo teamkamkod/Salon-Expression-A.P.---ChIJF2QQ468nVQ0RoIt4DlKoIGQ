@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salon Expression (A.P.) — coiffure — Bordeaux</title>
+  <meta name="description" content="Découvrez Salon Expression à Bordeaux, votre coiffeur de proximité pour des coiffures tendance et des soins capillaires personnalisés." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #E07A5F;
+      --secondary: #F4A261;
+      --background: #FFF7F0;
+      --text: #2D2A32;
+      --cta: #2A9D8F;
+      --radius: 12px;
+      --font-heading: 'Quicksand', sans-serif;
+      --font-body: 'Montserrat', sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--background);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+    }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 247, 240, 0.97);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      padding: 0 16px;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: none;
+      list-style: none;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta-btn {
+      background: var(--cta);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: var(--radius);
+      transition: opacity 0.2s !important;
+    }
+
+    .nav-cta-btn:hover {
+      opacity: 0.88;
+      color: #fff !important;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2.5px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: rgba(255, 247, 240, 0.99);
+      padding: 16px 0 24px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text);
+      text-decoration: none;
+      padding: 12px 24px;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--primary);
+      background: rgba(224, 122, 95, 0.06);
+    }
+
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+      }
+      .hamburger {
+        display: none;
+      }
+      .mobile-menu {
+        display: none !important;
+      }
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #E07A5F 0%, #F4A261 50%, #2A9D8F 100%);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 24px 20px;
+      max-width: 720px;
+      width: 100%;
+    }
+
+    .hero-content h1 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(1.6rem, 5vw, 3.8rem);
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+
+    .hero-content p {
+      font-family: var(--font-body);
+      font-size: clamp(0.95rem, 2.5vw, 1.25rem);
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--cta);
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 13px 32px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.8);
+      cursor: pointer;
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    @media (min-width: 768px) {
+      .hero-buttons {
+        flex-direction: row;
+        justify-content: center;
+      }
+      .btn-primary, .btn-secondary {
+        width: auto;
+      }
+    }
+
+    /* ===== SECTIONS COMMON ===== */
+    section {
+      padding: 48px 16px;
+    }
+
+    @media (min-width: 768px) {
+      section {
+        padding: 96px 24px;
+      }
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-headline {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      color: var(--primary);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .section-divider {
+      width: 56px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      border-radius: 2px;
+      margin: 0 auto 40px;
+    }
+
+    /* ===== ABOUT ===== */
+    .about {
+      background: #fff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .about-text h2 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .about-text p {
+      font-size: 0.97rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+
+    .about-features {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .about-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--background);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+    }
+
+    .about-feature-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .about-feature-text {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    /* ===== SERVICES ===== */
+    .services {
+      background: var(--background);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 600px) {
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 28px 22px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border-top: 4px solid var(--primary);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+
+    .service-card h3 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 0.88rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* ===== TEAM (equipe) ===== */
+    .equipe {
+      background: #fff;
+    }
+
+    .equipe-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 600px) {
+      .equipe-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .equipe-card {
+      background: var(--background);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+
+    .equipe-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 16px;
+    }
+
+    .equipe-card h3 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .equipe-card p {
+      font-size: 0.88rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* ===== REVIEWS ===== */
+    .reviews {
+      background: var(--background);
+    }
+
+    .reviews-rating-summary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .rating-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 12px 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    .rating-stars {
+      color: var(--secondary);
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+    }
+
+    .rating-number {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--text);
+    }
+
+    .rating-count {
+      font-size: 0.85rem;
+      color: #888;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .reviews-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .review-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .review-stars {
+      color: var(--secondary);
+      font-size: 1rem;
+      letter-spacing: 2px;
+    }
+
+    .review-text {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text);
+      flex: 1;
+      white-space: pre-line;
+    }
+
+    .review-author {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
+
+    /* ===== GALLERY ===== */
+    .galerie {
+      background: #fff;
+    }
+
+    .gallery-caption {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #888;
+      margin-bottom: 32px;
+    }
+
+    .gallery-placeholder {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .gallery-placeholder {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--cta) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .gallery-item-inner {
+      text-align: center;
+      color: rgba(255,255,255,0.9);
+      padding: 16px;
+    }
+
+    .gallery-item-inner span {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .gallery-item-inner p {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact {
+      background: var(--background);
+    }
+
+    .contact-instruction {
+      text-align: center;
+      font-size: 0.97rem;
+      color: #666;
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text);
+      background: #fff;
+      border: 2px solid #e8e0d8;
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+    }
+
+    .form-group textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      background: var(--cta);
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .form-submit:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    /* ===== HOURS & LOCATION ===== */
+    .hours-location {
+      background: #fff;
+    }
+
+    .hours-location-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    @media (min-width: 768px) {
+      .hours-location-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .hours-table tr {
+      border-bottom: 1px solid #f0e8e0;
+    }
+
+    .hours-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .hours-table td {
+      padding: 10px 4px;
+      font-size: 0.92rem;
+    }
+
+    .hours-table td:first-child {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      color: var(--text);
+      text-transform: capitalize;
+      width: 50%;
+    }
+
+    .hours-table td:last-child {
+      color: #555;
+    }
+
+    .hours-table .closed {
+      color: #bbb;
+    }
+
+    .hours-table .today-row td {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .map-container {
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 280px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .location-info {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .location-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+
+    .location-info-item span:first-child {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .location-info-item a {
+      color: var(--cta);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .location-info-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.85);
+      padding: 48px 16px 32px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    @media (min-width: 768px) {
+      .footer-inner {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    .footer-brand h3 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .footer-brand p {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 14px;
+    }
+
+    .footer-col p, .footer-col a {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.8;
+      text-decoration: none;
+      display: block;
+    }
+
+    .footer-col a:hover {
+      color: var(--secondary);
+    }
+
+    .footer-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 10px 16px;
+      margin-top: 12px;
+    }
+
+    .footer-rating .stars {
+      color: var(--secondary);
+      font-size: 0.95rem;
+    }
+
+    .footer-rating .score {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .footer-rating .count {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+    }
+
+    /* ===== MODAL ===== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.72);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 32px;
+      width: 90%;
+      max-width: 420px;
+      position: relative;
+      animation: fadeInModal 0.2s ease;
+    }
+
+    @keyframes fadeInModal {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      color: #888;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+    }
+
+    .modal-close:hover {
+      color: var(--text);
+    }
+
+    .modal-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 14px;
+      padding-right: 24px;
+    }
+
+    .modal-body {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .modal-cta {
+      display: block;
+      width: 100%;
+      background: var(--cta);
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px;
+      border-radius: var(--radius);
+      border: none;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .modal-cta:hover {
+      opacity: 0.88;
+    }
+
+    /* ===== TRUST SIGNALS ===== */
+    .trust {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      padding: 48px 16px;
+    }
+
+    .trust-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 600px) {
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .trust-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(255,255,255,0.15);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      backdrop-filter: blur(4px);
+    }
+
+    .trust-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+
+    .trust-text {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #fff;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">Salon Expression</a>
+      <ul class="nav-links">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#equipe">Équipe</a></li>
+        <li><a href="#avis">Avis</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact" class="nav-cta-btn">Rendez-vous</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about" class="mobile-link">À propos</a>
+      <a href="#services" class="mobile-link">Services</a>
+      <a href="#equipe" class="mobile-link">Équipe</a>
+      <a href="#avis" class="mobile-link">Avis clients</a>
+      <a href="#galerie" class="mobile-link">Galerie</a>
+      <a href="#contact" class="mobile-link">Prendre rendez-vous</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-in">
+      <h1>Votre salon de coiffure à Bordeaux</h1>
+      <p>Des experts à votre écoute pour sublimer vos cheveux.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">Prendre rendez-vous</a>
+        <a href="#about" class="btn-secondary">En savoir plus</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / PRESENTATION -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-text fade-in">
+          <h2>À propos de Salon Expression</h2>
+          <div class="section-divider" style="margin: 16px 0 24px; text-align:left;"></div>
+          <p>Salon Expression (A.P.) est votre destination coiffure à Bordeaux, offrant un accueil chaleureux et professionnel. Notre salon est accessible aux fauteuils roulants et convient aux enfants, garantissant une expérience agréable pour tous. Nous acceptons les cartes de crédit, de débit et les paiements mobiles NFC. Prenez rendez-vous pour profiter de nos services personnalisés.</p>
+        </div>
+        <div class="about-features fade-in">
+          <div class="about-feature">
+            <div class="about-feature-icon">♿</div>
+            <div class="about-feature-text">Salon accessible aux fauteuils roulants</div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">👶</div>
+            <div class="about-feature-text">Accueil adapté aux enfants</div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">💳</div>
+            <div class="about-feature-text">Paiement par carte et NFC accepté</div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">📅</div>
+            <div class="about-feature-text">Sur rendez-vous pour un service personnalisé</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST SIGNALS -->
+  <div class="trust">
+    <div class="trust-grid">
+      <div class="trust-item fade-in">
+        <div class="trust-icon">⭐</div>
+        <div class="trust-text">Note 4.9/5 — 39 avis clients</div>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon">✂️</div>
+        <div class="trust-text">Coiffeurs experts et passionnés</div>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon">🌿</div>
+        <div class="trust-text">Soins capillaires personnalisés</div>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon">📍</div>
+        <div class="trust-text">Au cœur de Bordeaux</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-inner">
+      <h2 class="section-headline fade-in">Nos Services</h2>
+      <div class="section-divider fade-in"></div>
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <div class="service-icon">✂️</div>
+          <h3>Coiffures tendance</h3>
+          <p>Des styles modernes adaptés à vos envies.</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">🎨</div>
+          <h3>Coloration</h3>
+          <p>Des couleurs vibrantes pour illuminer votre look.</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">🌿</div>
+          <h3>Soins capillaires</h3>
+          <p>Des soins personnalisés pour des cheveux en pleine santé.</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">💍</div>
+          <h3>Coiffures événementielles</h3>
+          <p>Sublimez vos occasions spéciales avec nos coiffures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPE -->
+  <section class="equipe" id="equipe">
+    <div class="section-inner">
+      <h2 class="section-headline fade-in">Notre Équipe</h2>
+      <div class="section-divider fade-in"></div>
+      <div class="equipe-grid">
+        <div class="equipe-card fade-in">
+          <div class="equipe-avatar">💇</div>
+          <h3>Sarah</h3>
+          <p>Experte en coupes et colorations, Sarah est à l'écoute de vos envies pour vous offrir un résultat parfait et personnalisé.</p>
+        </div>
+        <div class="equipe-card fade-in">
+          <div class="equipe-avatar">✨</div>
+          <h3>Charlotte</h3>
+          <p>Spécialiste des cheveux bouclés et frisés, Charlotte sublime chaque texture avec expertise et bienveillance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVIS CLIENTS -->
+  <section class="reviews" id="avis">
+    <div class="section-inner">
+      <h2 class="section-headline fade-in">Avis Clients</h2>
+      <div class="section-divider fade-in"></div>
+      <div class="reviews-rating-summary fade-in">
+        <div class="rating-badge">
+          <span class="rating-stars">★★★★★</span>
+          <span class="rating-number">4.9</span>
+          <span class="rating-count">/ 5 — 39 avis</span>
+        </div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card fade-in">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Sarah est à l'écoute, de bon conseil et très professionnelle.
+Elle a parfaitement rattrapée une précédente coupe ratée dans un autre salon.
+La couleur et le brushing étaient très réussis...</p>
+          <div class="review-author">Corinne C</div>
+        </div>
+        <div class="review-card fade-in">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">C'est bien la première fois que je sors du coiffeur très contente du résultat ! 🤩
+
+En plus d'être aimable, Charlotte a su sublimer mes boucles, je recommande sans hésiter !</p>
+          <div class="review-author">Ravier Tifanie</div>
+        </div>
+        <div class="review-card fade-in">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Super accueil. Il est rare d'avoir des coiffeuses aussi compétentes sur les cheveux frisees. Merci Charlotte et Sarah pour votre professionnalisme et votre accueil personnalisé !</p>
+          <div class="review-author">Malafosse Taquet Lucie</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE -->
+  <section class="galerie" id="galerie">
+    <div class="section-inner">
+      <h2 class="section-headline fade-in">Galerie</h2>
+      <div class="section-divider fade-in"></div>
+      <p class="gallery-caption fade-in">Découvrez nos réalisations avant/après.</p>
+      <div class="gallery-placeholder">
+        <div class="gallery-item fade-in">
+          <div class="gallery-item-inner">
+            <span>✂️</span>
+            <p>Coupes tendance</p>
+          </div>
+        </div>
+        <div class="gallery-item fade-in" style="background: linear-gradient(135deg, #F4A261 0%, #E07A5F 100%);">
+          <div class="gallery-item-inner">
+            <span>🎨</span>
+            <p>Colorations</p>
+          </div>
+        </div>
+        <div class="gallery-item fade-in" style="background: linear-gradient(135deg, #2A9D8F 0%, #E07A5F 100%);">
+          <div class="gallery-item-inner">
+            <span>🌿</span>
+            <p>Soins capillaires</p>
+          </div>
+        </div>
+        <div class="gallery-item fade-in" style="background: linear-gradient(135deg, #E07A5F 0%, #2A9D8F 100%);">
+          <div class="gallery-item-inner">
+            <span>💍</span>
+            <p>Coiffures événementielles</p>
+          </div>
+        </div>
+        <div class="gallery-item fade-in" style="background: linear-gradient(135deg, #F4A261 0%, #2A9D8F 100%);">
+          <div class="gallery-item-inner">
+            <span>💇</span>
+            <p>Brushings</p>
+          </div>
+        </div>
+        <div class="gallery-item fade-in" style="background: linear-gradient(135deg, #2A9D8F 0%, #F4A261 100%);">
+          <div class="gallery-item-inner">
+            <span>✨</span>
+            <p>Avant / Après</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS & LOCATION -->
+  <section class="hours-location" id="horaires">
+    <div class="section-inner">
+      <h2 class="section-headline fade-in">Horaires et Adresse</h2>
+      <div class="section-divider fade-in"></div>
+      <div class="hours-location-grid">
+        <div class="fade-in">
+          <table class="hours-table">
+            <tbody>
+              <tr id="row-lundi">
+                <td>Lundi</td>
+                <td class="closed">Fermé</td>
+              </tr>
+              <tr id="row-mardi">
+                <td>Mardi</td>
+                <td>09:00 – 18:00</td>
+              </tr>
+              <tr id="row-mercredi">
+                <td>Mercredi</td>
+                <td>09:00 – 18:00</td>
+              </tr>
+              <tr id="row-jeudi">
+                <td>Jeudi</td>
+                <td>09:00 – 18:00</td>
+              </tr>
+              <tr id="row-vendredi">
+                <td>Vendredi</td>
+                <td class="closed">Fermé</td>
+              </tr>
+              <tr id="row-samedi">
+                <td>Samedi</td>
+                <td>09:00 – 15:00</td>
+              </tr>
+              <tr id="row-dimanche">
+                <td>Dimanche</td>
+                <td class="closed">Fermé</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="fade-in">
+          <div class="map-container">
+            <iframe
+              src="https://maps.google.com/maps?q=44.820851,-0.5722729999999999&z=16&output=embed"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Salon Expression sur Google Maps"
+            ></iframe>
+          </div>
+          <div class="location-info">
+            <div class="location-info-item">
+              <span>📍</span>
+              <span>258 Cr de la Somme, 33800 Bordeaux, France</span>
+            </div>
+            <div class="location-info-item">
+              <span>📞</span>
+              <a href="tel:+33556849430">+33 5 56 84 94 30</a>
+            </div>
+            <div class="location-info-item">
+              <span>🗺️</span>
+              <a href="https://maps.google.com/maps?q=44.820851,-0.5722729999999999" target="_blank" rel="noopener">Ouvrir dans Google Maps</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <h2 class="section-headline fade-in">Contactez-nous</h2>
+      <div class="section-divider fade-in"></div>
+      <p class="contact-instruction fade-in">Pour toute question ou prise de rendez-vous, contactez-nous dès maintenant.</p>
+      <form class="contact-form fade-in" id="contactForm" action="#" novalidate>
+        <div class="form-group">
+          <label for="name">Nom complet</label>
+          <input type="text" id="name" name="name" placeholder="Votre nom" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Adresse e-mail</label>
+          <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Votre message ou demande de rendez-vous..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Envoyer le message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Salon Expression (A.P.)</h3>
+        <p>Votre salon de coiffure de proximité à Bordeaux. Des experts passionnés pour sublimer vos cheveux.</p>
+        <div class="footer-rating">
+          <span class="stars">★★★★★</span>
+          <span class="score">4.9</span>
+          <span class="count">39 avis Google</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Informations</h4>
+        <p>258 Cr de la Somme</p>
+        <p>33800 Bordeaux, France</p>
+        <a href="tel:+33556849430">+33 5 56 84 94 30</a>
+        <a href="https://maps.google.com/maps?q=44.820851,-0.5722729999999999" target="_blank" rel="noopener" style="margin-top:8px;">Voir sur Google Maps →</a>
+      </div>
+      <div class="footer-col">
+        <h4>Horaires</h4>
+        <p>Lundi : Fermé</p>
+        <p>Mardi – Jeudi : 09:00 – 18:00</p>
+        <p>Mercredi : 09:00 – 18:00</p>
+        <p>Vendredi : Fermé</p>
+        <p>Samedi : 09:00 – 15:00</p>
+        <p>Dimanche : Fermé</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Salon Expression (A.P.) — Bordeaux. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card" id="modalCard">
+      <button class="modal-close" id="modalClose" aria-label="Fermer">×</button>
+      <div class="modal-title" id="modalTitle">Formulaire de contact</div>
+      <div class="modal-body">
+        <p>Merci pour votre message ! 🙏</p>
+        <br>
+        <p>Ce formulaire de contact sera activé après l'acquisition du site. Pour activer cette fonctionnalité et permettre à vos clients de vous contacter directement depuis votre site, procédez à l'achat de votre site web.</p>
+        <br>
+        <p>Contactez notre équipe pour finaliser votre site et mettre en ligne toutes vos fonctionnalités.</p>
+      </div>
+      <a
+        href="mailto:team@kamkod.com?subject=Website%20Salon%20Expression%20(A.P.)%20%E2%80%94%20ChIJF2QQ468nVQ0RoIt4DlKoIGQ"
+        class="modal-cta"
+      >
+        Activer mon site web →
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // ===== HAMBURGER MENU =====
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ===== HIGHLIGHT TODAY'S HOURS =====
+    const days = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+    const today = days[new Date().getDay()];
+    const todayRow = document.getElementById('row-' + today);
+    if (todayRow) {
+      todayRow.classList.add('today-row');
+    }
+
+    // ===== FADE-IN ON SCROLL =====
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Trigger hero immediately
+    const heroContent = document.querySelector('.hero .fade-in');
+    if (heroContent) {
+      setTimeout(() => heroContent.classList.add('visible'), 200);
+    }
+
+    // ===== MODAL =====
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalClose = document.getElementById('modalClose');
+    const contactForm = document.getElementById('contactForm');
+
+    function openModal() {
+      modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modalOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      openModal();
+    });
+
+    modalClose.addEventListener('click', closeModal);
+
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // ===== SMOOTH NAV SHADOW =====
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('.nav');
+      if (window.scrollY > 10) {
+        nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.12)';
+      } else {
+        nav.style.boxShadow = '0 2px 16px rgba(0,0,0,0.08)';
+      }
+    });
+  </script>
+</body>
+</html>
